@@ -5,7 +5,7 @@ import {
   SiJavascript,
   SiTailwindcss,
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiNodedotjs,
   SiExpress,
   SiPostgresql,
@@ -39,7 +39,7 @@ const groups: Group[] = [
       { name: "JavaScript", icon: SiJavascript },
       { name: "Tailwind CSS", icon: SiTailwindcss },
       { name: "HTML5", icon: SiHtml5 },
-      { name: "CSS3", icon: SiCss3 },
+      { name: "CSS3", icon: SiCss },
     ],
   },
   {
