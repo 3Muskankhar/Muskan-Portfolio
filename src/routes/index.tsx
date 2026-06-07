@@ -4,6 +4,7 @@ import { ArrowRight, Mail } from "lucide-react";
 import { About } from "@/components/About";
 import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
+import { Contact } from "@/components/Contact";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -73,6 +74,7 @@ function Index() {
     <About />
     <Skills />
     <Projects />
+    <Contact />
     </>
   );
 }
