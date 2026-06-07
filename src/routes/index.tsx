@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail } from "lucide-react";
 import { About } from "@/components/About";
+import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
 
 export const Route = createFileRoute("/")({
@@ -70,6 +71,7 @@ function Index() {
       </div>
     </section>
     <About />
+    <Skills />
     <Projects />
     </>
   );
