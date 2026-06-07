@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Send, Mail } from "lucide-react";
-import { SiLinkedin, SiGithub, SiLeetcode } from "react-icons/si";
+import { SiLinkedin, SiGithub, SiLeetcode } from "react-icons/si/index.js";
 import { z } from "zod";
 
 const contactSchema = z.object({
