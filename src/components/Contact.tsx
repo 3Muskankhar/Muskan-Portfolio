@@ -4,7 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Send, Mail } from "lucide-react";
-import { SiLinkedin, SiGithub, SiLeetcode } from "react-icons/si/index.js";
+import { SiGithub, SiLeetcode } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -14,7 +15,7 @@ const contactSchema = z.object({
 });
 
 const socials = [
-  { label: "LinkedIn", href: "https://linkedin.com", icon: SiLinkedin },
+  { label: "LinkedIn", href: "https://linkedin.com", icon: FaLinkedin },
   { label: "GitHub", href: "https://github.com", icon: SiGithub },
   { label: "LeetCode", href: "https://leetcode.com", icon: SiLeetcode },
   { label: "Email", href: "mailto:hello@example.com", icon: Mail },
