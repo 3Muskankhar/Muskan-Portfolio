@@ -1,11 +1,10 @@
-import { Code2, Briefcase, GraduationCap, Sparkles } from "lucide-react";
+import { Code2, Briefcase, GraduationCap } from "lucide-react";
 import muskanPhoto from "@/assets/muskan.jpeg.asset.json";
 
 const stats = [
   { icon: Code2, value: "5+", label: "Projects Delivered" },
   { icon: Briefcase, value: "2", label: "SDE Internships" },
   { icon: GraduationCap, value: "9.05", label: "CGPA / 10" },
-  { icon: Sparkles, value: "AI", label: "& Full-Stack Focus" },
 ];
 
 export function About() {
@@ -18,7 +17,7 @@ export function About() {
             <div className="relative">
               <div className="absolute -inset-6 rounded-full bg-gradient-to-br from-primary/50 via-accent/30 to-primary/10 blur-3xl animate-pulse" />
               <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary to-accent opacity-70 blur-sm" />
-              <div className="relative aspect-square w-64 overflow-hidden rounded-full border-2 border-primary/30 bg-card shadow-2xl shadow-primary/20 sm:w-72">
+              <div className="relative aspect-square w-72 overflow-hidden rounded-full border-2 border-primary/30 bg-card shadow-2xl shadow-primary/20 sm:w-80 md:w-96">
                 <img
                   src={muskanPhoto.url}
                   alt="Muskan Khar portrait"
@@ -69,7 +68,7 @@ export function About() {
         </div>
 
         {/* Stats */}
-        <div className="mt-16 grid gap-4 grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-4 sm:grid-cols-3">
           {stats.map(({ icon: Icon, value, label }) => (
             <div
               key={label}
