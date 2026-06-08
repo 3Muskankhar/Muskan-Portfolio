@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { Download, Mail } from "lucide-react";
+import { Download, Mail, ArrowRight } from "lucide-react";
+import { SiGithub, SiLeetcode } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { About } from "@/components/About";
 import { Skills } from "@/components/Skills";
@@ -30,51 +32,81 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
-    <section className="relative flex min-h-[calc(100vh-4rem-1px)] items-center justify-center overflow-hidden px-6">
-      {/* Animated background */}
+    <section className="relative flex min-h-[calc(100vh-4rem-1px)] items-center justify-center overflow-hidden px-6 py-20">
       <AnimatedBackground />
 
       <div className="relative z-10 mx-auto max-w-4xl text-center animate-fade-in">
-        <p className="mb-5 inline-block rounded-full border border-border bg-card/40 px-4 py-1.5 text-xs font-medium tracking-widest text-muted-foreground uppercase backdrop-blur-sm">
-          Software Developer · Open to Opportunities
-        </p>
+        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/40 px-4 py-1.5 text-xs font-medium tracking-widest text-muted-foreground uppercase backdrop-blur-sm">
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+          </span>
+          Open to Opportunities
+        </div>
 
-        <p className="mb-3 text-base text-muted-foreground sm:text-lg">
+        <p className="mb-4 text-base font-light tracking-wide text-muted-foreground sm:text-lg">
           Hello, I&apos;m
         </p>
-        <h1 className="text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-          <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-            Muskan Khar
+        <h1 className="font-serif text-6xl font-medium leading-[1.02] tracking-tight sm:text-7xl md:text-8xl lg:text-[7.5rem]">
+          <span className="bg-gradient-to-br from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent">
+            Muskan
+          </span>{" "}
+          <span className="bg-gradient-to-br from-primary via-accent to-primary bg-clip-text text-transparent italic">
+            Khar
           </span>
         </h1>
 
-        <h2 className="mt-6 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl md:text-4xl">
-          And I&apos;m a <Typewriter />
+        <h2 className="mt-8 text-xl font-light tracking-tight text-muted-foreground sm:text-2xl md:text-3xl">
+          And I&apos;m a{" "}
+          <span className="font-medium text-foreground">
+            <Typewriter />
+          </span>
         </h2>
 
-        <p className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg">
+        <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
           I build AI-powered, full-stack web experiences with a focus on clean
           design, performance, and thoughtful user experience.
         </p>
 
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button asChild size="lg" className="group w-full sm:w-auto">
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Button asChild size="lg" className="group w-full rounded-full px-7 shadow-lg shadow-primary/20 sm:w-auto">
             <a href="#contact">
               <Mail className="mr-2 h-4 w-4" />
               Contact for Work
+              <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
           </Button>
           <Button
             asChild
             size="lg"
             variant="outline"
-            className="group w-full sm:w-auto"
+            className="group w-full rounded-full px-7 sm:w-auto"
           >
             <a href="/cv.pdf" download>
               <Download className="mr-2 h-4 w-4" />
               Download CV
             </a>
           </Button>
+        </div>
+
+        <div className="mt-10 flex items-center justify-center gap-3">
+          {[
+            { label: "GitHub", href: "https://github.com", icon: SiGithub },
+            { label: "LinkedIn", href: "https://linkedin.com", icon: FaLinkedin },
+            { label: "LeetCode", href: "https://leetcode.com", icon: SiLeetcode },
+            { label: "Email", href: "mailto:hello@example.com", icon: Mail },
+          ].map(({ label, href, icon: Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel="noreferrer noopener"
+              aria-label={label}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-card/40 text-muted-foreground backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary"
+            >
+              <Icon className="h-4 w-4" />
+            </a>
+          ))}
         </div>
       </div>
     </section>
