@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail } from "lucide-react";
+import { Download, Mail } from "lucide-react";
+import { useEffect, useState } from "react";
 import { About } from "@/components/About";
 import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
@@ -38,16 +39,22 @@ function Index() {
           Software Developer · Open to Opportunities
         </p>
 
+        <p className="mb-3 text-base text-muted-foreground sm:text-lg">
+          Hello, I&apos;m
+        </p>
         <h1 className="text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-          Hi, I&apos;m{" "}
           <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
             Muskan Khar
           </span>
         </h1>
 
-        <p className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg md:text-xl">
-          Full-stack developer crafting AI-powered web experiences with React,
-          Next.js, and modern cloud tools.
+        <h2 className="mt-6 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl md:text-4xl">
+          And I&apos;m a <Typewriter />
+        </h2>
+
+        <p className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg">
+          I build AI-powered, full-stack web experiences with a focus on clean
+          design, performance, and thoughtful user experience.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -63,9 +70,9 @@ function Index() {
             variant="outline"
             className="group w-full sm:w-auto"
           >
-            <a href="#projects">
-              View Portfolio
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <a href="/cv.pdf" download>
+              <Download className="mr-2 h-4 w-4" />
+              Download CV
             </a>
           </Button>
         </div>
@@ -76,6 +83,52 @@ function Index() {
     <Projects />
     <Contact />
     </>
+  );
+}
+
+const ROLES = [
+  "Web Developer",
+  "Software Developer",
+  "AI/ML Enthusiast",
+  "Full Stack Developer",
+];
+
+function Typewriter() {
+  const [index, setIndex] = useState(0);
+  const [text, setText] = useState("");
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = ROLES[index];
+    const atEnd = !deleting && text === current;
+    const atStart = deleting && text === "";
+
+    if (atEnd) {
+      const t = setTimeout(() => setDeleting(true), 1400);
+      return () => clearTimeout(t);
+    }
+    if (atStart) {
+      setDeleting(false);
+      setIndex((i) => (i + 1) % ROLES.length);
+      return;
+    }
+
+    const t = setTimeout(
+      () => {
+        setText((prev) =>
+          deleting ? current.slice(0, prev.length - 1) : current.slice(0, prev.length + 1),
+        );
+      },
+      deleting ? 50 : 90,
+    );
+    return () => clearTimeout(t);
+  }, [text, deleting, index]);
+
+  return (
+    <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+      {text}
+      <span className="ml-1 inline-block w-[2px] animate-pulse bg-primary align-middle" style={{ height: "0.9em" }} />
+    </span>
   );
 }
 
