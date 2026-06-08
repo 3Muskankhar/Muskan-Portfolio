@@ -1,44 +1,26 @@
-import { Code2, Briefcase, GraduationCap } from "lucide-react";
+import { Code2, Briefcase, GraduationCap, Sparkles } from "lucide-react";
+import muskanPhoto from "@/assets/muskan.jpeg.asset.json";
 
 const stats = [
-  {
-    icon: Code2,
-    value: "10+",
-    label: "Projects Built",
-  },
-  {
-    icon: Briefcase,
-    value: "2x",
-    label: "SDE Internships",
-  },
-  {
-    icon: GraduationCap,
-    value: "9.05",
-    label: "CGPA / 10",
-  },
+  { icon: Code2, value: "5+", label: "Projects Delivered" },
+  { icon: Briefcase, value: "2", label: "SDE Internships" },
+  { icon: GraduationCap, value: "9.05", label: "CGPA / 10" },
+  { icon: Sparkles, value: "AI", label: "& Full-Stack Focus" },
 ];
 
 export function About() {
   return (
     <section id="about" className="border-t border-border bg-background py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-14 text-center">
-          <p className="text-xs font-medium tracking-widest text-primary uppercase">
-            About Me
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            A bit about my journey
-          </h2>
-        </div>
-
-        <div className="grid items-center gap-12 md:grid-cols-5">
-          {/* Profile photo */}
+        <div className="grid items-center gap-12 md:grid-cols-5 md:gap-16">
+          {/* Profile photo — circular with blue gradient glow */}
           <div className="md:col-span-2 flex justify-center">
             <div className="relative">
-              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/40 to-accent/10 blur-2xl" />
-              <div className="relative aspect-square w-64 overflow-hidden rounded-3xl border border-border bg-card sm:w-72">
+              <div className="absolute -inset-6 rounded-full bg-gradient-to-br from-primary/50 via-accent/30 to-primary/10 blur-3xl animate-pulse" />
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary to-accent opacity-70 blur-sm" />
+              <div className="relative aspect-square w-64 overflow-hidden rounded-full border-2 border-primary/30 bg-card shadow-2xl shadow-primary/20 sm:w-72">
                 <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=600&fit=crop"
+                  src={muskanPhoto.url}
                   alt="Muskan Khar portrait"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -47,35 +29,54 @@ export function About() {
             </div>
           </div>
 
-          {/* Bio */}
+          {/* Right column */}
           <div className="md:col-span-3">
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              I&apos;m{" "}
-              <span className="font-semibold text-foreground">Muskan Khar</span>
-              , a final-year Computer Science student at Punjab Engineering
-              College passionate about building thoughtful, AI-powered web
-              products. I&apos;ve interned as an SDE at{" "}
-              <span className="text-foreground">Microsoft</span> and{" "}
-              <span className="text-foreground">CSIR-CSIO</span>, shipping
-              full-stack systems and ML pipelines that real users rely on.
+            <p className="text-xs font-medium tracking-widest text-primary uppercase">
+              About Me
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              I love working across the stack — from React and Next.js
-              interfaces to PostgreSQL, Prisma, and LLM integrations with
-              LangChain and the Gemini API.
+            <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight sm:text-5xl">
+              About <span className="bg-gradient-to-br from-primary via-accent to-primary bg-clip-text text-transparent italic">Me</span>
+            </h2>
+            <p className="mt-3 text-base font-medium text-muted-foreground sm:text-lg">
+              Software Engineer · AI &amp; Full-Stack Developer
             </p>
+
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
+              <p>
+                I&apos;m{" "}
+                <span className="font-semibold text-foreground">Muskan Khar</span>
+                , a Computer Science graduate from{" "}
+                <span className="text-foreground">Punjab Engineering College</span>{" "}
+                with a passion for building technology that solves real-world
+                problems. My interests lie in full-stack development, artificial
+                intelligence, and designing scalable software that delivers
+                meaningful user experiences.
+              </p>
+              <p>
+                Through my academic journey and industry internships — including
+                at <span className="text-foreground">Microsoft</span> — I&apos;ve
+                worked on AI-driven applications, modern web platforms, and
+                end-to-end software solutions.
+              </p>
+              <p>
+                I enjoy exploring new technologies, tackling challenging
+                problems, and continuously improving my skills as a developer.
+                I&apos;m always excited to build impactful products and
+                contribute to innovative engineering teams.
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="mt-16 grid gap-4 sm:grid-cols-3">
+        <div className="mt-16 grid gap-4 grid-cols-2 lg:grid-cols-4">
           {stats.map(({ icon: Icon, value, label }) => (
             <div
               key={label}
-              className="group rounded-2xl border border-border bg-card/50 p-6 backdrop-blur transition-colors hover:border-primary/50"
+              className="group rounded-2xl border border-border bg-card/50 p-6 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
             >
               <Icon className="h-6 w-6 text-primary" />
-              <div className="mt-4 text-4xl font-bold tracking-tight">
+              <div className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
                 {value}
               </div>
               <div className="mt-1 text-sm text-muted-foreground">{label}</div>
