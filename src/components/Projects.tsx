@@ -32,39 +32,39 @@ const projects: Project[] = [
     href: "#",
   },
   {
-    title: "CSIO Student Portal",
+    title: "Weekendly",
     description:
-      "Secure registration portal with OTP login, PDF previews, and role-based admin access.",
+      "Plan your perfect weekend — a smart scheduler that curates activities, meals, and outings into a shareable itinerary.",
     category: "Full-Stack",
     image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
     href: "#",
   },
   {
-    title: "Topic Modeling Pipeline",
+    title: "MedBuddy – AI Medical Coach",
     description:
-      "End-to-end embedding generation pipeline in Python supporting Microsoft topic workflows.",
+      "AI-powered medical companion that explains symptoms, surfaces guidance, and helps users track health in plain language.",
     category: "AI/ML",
     image:
-      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop",
     href: "#",
   },
   {
-    title: "Portfolio Website",
+    title: "OncoSense – Multi-Omics Cancer Prediction",
     description:
-      "Personal portfolio built with TanStack Start, Tailwind, and a custom dark design system.",
-    category: "Web",
+      "Optimized ML pipeline that fuses multi-omics signals to predict cancer subtypes with improved accuracy and interpretability.",
+    category: "AI/ML",
     image:
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&h=600&fit=crop",
     href: "#",
   },
   {
-    title: "Realtime Chat App",
+    title: "ShopSphere – E-commerce Clone",
     description:
-      "WebSocket-based chat with rooms, typing indicators, and Postgres-backed message history.",
+      "Full-stack Amazon-inspired storefront with cart, auth, search, and checkout, built on a modern web stack.",
     category: "Web",
     image:
-      "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&h=600&fit=crop",
     href: "#",
   },
 ];
