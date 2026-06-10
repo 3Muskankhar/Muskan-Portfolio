@@ -38,9 +38,18 @@ export function Contact() {
       return;
     }
     setErrors({});
+
+    const { name, email, message } = parsed.data;
+    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+    const body = encodeURIComponent(
+      `Hi Muskan,\n\n${message}\n\n— ${name}\n${email}`,
+    );
+    // Open the user's email client with the message pre-filled.
+    window.location.href = `mailto:muskankhar2003@gmail.com?subject=${subject}&body=${body}`;
+
     setStatus("sent");
     setForm({ name: "", email: "", message: "" });
-    setTimeout(() => setStatus("idle"), 3500);
+    setTimeout(() => setStatus("idle"), 4000);
   }
 
   return (
@@ -116,7 +125,7 @@ export function Contact() {
             </Button>
             {status === "sent" && (
               <p className="text-center text-sm text-primary">
-                Thanks — your message has been sent.
+                Opening your email app… send it through and I&apos;ll get back to you soon.
               </p>
             )}
           </div>
