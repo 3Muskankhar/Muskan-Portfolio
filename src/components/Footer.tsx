@@ -9,22 +9,28 @@ export function Footer() {
         </p>
         <div className="flex items-center gap-6">
           <a
-            href="#"
+            href="https://github.com/3Muskankhar"
+            target="_blank"
+            rel="noreferrer noopener"
             className="text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             GitHub
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/muskan-khar-139465257"
+            target="_blank"
+            rel="noreferrer noopener"
             className="text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             LinkedIn
           </a>
           <a
-            href="#"
+            href="https://leetcode.com/u/muskaan_khar/"
+            target="_blank"
+            rel="noreferrer noopener"
             className="text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
-            Twitter
+            LeetCode
           </a>
         </div>
       </div>

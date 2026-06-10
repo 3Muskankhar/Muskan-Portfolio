@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Download, Mail, ArrowRight } from "lucide-react";
-import { SiGithub, SiLeetcode } from "react-icons/si";
+import { SiGithub } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { About } from "@/components/About";
@@ -88,10 +88,9 @@ function Index() {
 
         <div className="mt-10 flex items-center justify-center gap-3">
           {[
-            { label: "GitHub", href: "https://github.com", icon: SiGithub },
-            { label: "LinkedIn", href: "https://linkedin.com", icon: FaLinkedin },
-            { label: "LeetCode", href: "https://leetcode.com", icon: SiLeetcode },
-            { label: "Email", href: "mailto:hello@example.com", icon: Mail },
+            { label: "GitHub", href: "https://github.com/3Muskankhar", icon: SiGithub },
+            { label: "LinkedIn", href: "https://www.linkedin.com/in/muskan-khar-139465257", icon: FaLinkedin },
+            { label: "Email", href: "mailto:muskankhar2004@gmail.com", icon: Mail },
           ].map(({ label, href, icon: Icon }) => (
             <a
               key={label}
