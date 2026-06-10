@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Download, Mail, ArrowRight } from "lucide-react";
-import { SiGithub, SiLeetcode } from "react-icons/si";
+import { SiGithub } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { About } from "@/components/About";
