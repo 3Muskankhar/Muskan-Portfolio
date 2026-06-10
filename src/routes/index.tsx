@@ -47,8 +47,8 @@ function Index() {
         <p className="mb-4 text-base font-light tracking-wide text-muted-foreground sm:text-lg">
           Hello, I&apos;m
         </p>
-        <h1 className="font-script text-7xl leading-[1.1] tracking-wide sm:text-8xl md:text-9xl lg:text-[10rem]">
-          <span className="group inline-block cursor-default bg-gradient-to-br from-foreground via-primary to-accent bg-clip-text text-transparent transition-all duration-500 hover:[transform:perspective(600px)_rotateX(8deg)_scale(1.04)] hover:drop-shadow-[0_8px_40px_rgba(139,92,246,0.55)]">
+        <h1 className="font-script text-6xl leading-[1.05] tracking-normal sm:text-7xl md:text-8xl lg:text-9xl">
+          <span className="group inline-block cursor-default bg-gradient-to-b from-white via-slate-200 to-slate-400 bg-clip-text text-transparent drop-shadow-[0_4px_24px_rgba(139,92,246,0.45)] transition-all duration-500 hover:[transform:perspective(600px)_rotateX(6deg)_scale(1.03)] hover:drop-shadow-[0_8px_40px_rgba(139,92,246,0.7)]">
             Muskan Khar
           </span>
         </h1>
