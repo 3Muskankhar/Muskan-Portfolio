@@ -15,10 +15,10 @@ const contactSchema = z.object({
 });
 
 const socials = [
-  { label: "LinkedIn", href: "https://linkedin.com", icon: FaLinkedin },
-  { label: "GitHub", href: "https://github.com", icon: SiGithub },
-  { label: "LeetCode", href: "https://leetcode.com", icon: SiLeetcode },
-  { label: "Email", href: "mailto:hello@example.com", icon: Mail },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/muskan-khar-139465257", icon: FaLinkedin },
+  { label: "GitHub", href: "https://github.com/3Muskankhar", icon: SiGithub },
+  { label: "LeetCode", href: "https://leetcode.com/u/muskaan_khar/", icon: SiLeetcode },
+  { label: "Email", href: "mailto:muskankhar2004@gmail.com", icon: Mail },
 ];
 
 export function Contact() {
@@ -45,7 +45,7 @@ export function Contact() {
       `Hi Muskan,\n\n${message}\n\n— ${name}\n${email}`,
     );
     // Open the user's email client with the message pre-filled.
-    window.location.href = `mailto:muskankhar2003@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:muskankhar2004@gmail.com?subject=${subject}&body=${body}`;
 
     setStatus("sent");
     setForm({ name: "", email: "", message: "" });
