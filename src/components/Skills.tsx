@@ -23,8 +23,7 @@ import {
   SiCplusplus,
   SiPostman,
 } from "react-icons/si";
-import { VscVscode } from "react-icons/vsc";
-import { Brain, Network, Database, Cpu, GitBranch, Sparkles, Bot, Eye, MessageSquare, Workflow } from "lucide-react";
+import { Brain, Network, Database, Cpu, GitBranch, Sparkles, Bot, Eye, MessageSquare, Workflow, Code2 } from "lucide-react";
 import type { IconType } from "react-icons";
 
 type Skill = { name: string; icon: IconType | React.ComponentType<{ className?: string }>; color: string };
@@ -61,7 +60,7 @@ const groups: Group[] = [
       { name: "GitHub", icon: SiGithub, color: "#ffffff" },
       { name: "Docker", icon: SiDocker, color: "#2496ED" },
       { name: "Linux / Unix", icon: SiLinux, color: "#FCC624" },
-      { name: "VS Code", icon: VscVscode, color: "#007ACC" },
+      { name: "VS Code", icon: Code2, color: "#007ACC" },
       { name: "Postman", icon: SiPostman, color: "#FF6C37" },
     ],
   },

@@ -125,7 +125,7 @@ export function Contact() {
             </Button>
             {status === "sent" && (
               <p className="text-center text-sm text-primary">
-                Thanks — your message has been sent.
+                Opening your email app… send it through and I&apos;ll get back to you soon.
               </p>
             )}
           </div>
