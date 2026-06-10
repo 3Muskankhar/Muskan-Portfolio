@@ -1,5 +1,5 @@
 import { Code2, Briefcase, GraduationCap } from "lucide-react";
-import muskanPhoto from "@/assets/muskan.jpeg.asset.json";
+import muskanPhoto from "@/assets/muskan-new.jpeg.asset.json";
 
 const stats = [
   { icon: Code2, value: "5+", label: "Projects Delivered" },
@@ -15,9 +15,9 @@ export function About() {
           {/* Profile photo — circular with blue gradient glow */}
           <div className="md:col-span-2 flex justify-center">
             <div className="relative">
-              <div className="absolute -inset-6 rounded-full bg-gradient-to-br from-primary/50 via-accent/30 to-primary/10 blur-3xl animate-pulse" />
-              <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary to-accent opacity-70 blur-sm" />
-              <div className="relative aspect-square w-72 overflow-hidden rounded-full border-2 border-primary/30 bg-card shadow-2xl shadow-primary/20 sm:w-80 md:w-96">
+              <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-primary/20 via-accent/10 to-transparent blur-2xl" />
+              <div className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-3xl border border-primary/40" />
+              <div className="relative aspect-[3/4] w-72 overflow-hidden rounded-3xl border border-border bg-card shadow-2xl sm:w-80 md:w-96">
                 <img
                   src={muskanPhoto.url}
                   alt="Muskan Khar portrait"
