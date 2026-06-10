@@ -47,12 +47,9 @@ function Index() {
         <p className="mb-4 text-base font-light tracking-wide text-muted-foreground sm:text-lg">
           Hello, I&apos;m
         </p>
-        <h1 className="font-serif text-6xl font-medium leading-[1.02] tracking-tight sm:text-7xl md:text-8xl lg:text-[7.5rem]">
-          <span className="bg-gradient-to-br from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent">
-            Muskan
-          </span>{" "}
-          <span className="bg-gradient-to-br from-primary via-accent to-primary bg-clip-text text-transparent italic">
-            Khar
+        <h1 className="font-script text-7xl leading-[1.1] tracking-wide sm:text-8xl md:text-9xl lg:text-[10rem]">
+          <span className="group inline-block cursor-default bg-gradient-to-br from-foreground via-primary to-accent bg-clip-text text-transparent transition-all duration-500 hover:[transform:perspective(600px)_rotateX(8deg)_scale(1.04)] hover:drop-shadow-[0_8px_40px_rgba(139,92,246,0.55)]">
+            Muskan Khar
           </span>
         </h1>
 
