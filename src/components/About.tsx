@@ -33,8 +33,11 @@ export function About() {
             <p className="text-xs font-medium tracking-widest text-primary uppercase">
               About Me
             </p>
-            <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight sm:text-5xl">
-              About <span className="bg-gradient-to-br from-primary via-accent to-primary bg-clip-text text-transparent italic">Me</span>
+            <h2 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+              About{" "}
+              <span className="font-script bg-gradient-to-br from-primary via-accent to-primary bg-clip-text text-transparent italic font-normal">
+                Me
+              </span>
             </h2>
             <p className="mt-3 text-base font-medium text-muted-foreground sm:text-lg">
               Software Engineer · AI &amp; Full-Stack Developer
@@ -67,18 +70,20 @@ export function About() {
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="mt-16 grid gap-4 sm:grid-cols-3">
+        {/* Stats — compact, stays 3-up on mobile */}
+        <div className="mt-12 grid grid-cols-3 gap-2 sm:gap-4">
           {stats.map(({ icon: Icon, value, label }) => (
             <div
               key={label}
-              className="group rounded-2xl border border-border bg-card/50 p-6 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
+              className="group rounded-xl border border-border bg-card/50 p-3 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 sm:p-5"
             >
-              <Icon className="h-6 w-6 text-primary" />
-              <div className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+              <Icon className="h-4 w-4 text-primary sm:h-5 sm:w-5" />
+              <div className="mt-2 text-lg font-bold tracking-tight sm:mt-3 sm:text-2xl md:text-3xl">
                 {value}
               </div>
-              <div className="mt-1 text-sm text-muted-foreground">{label}</div>
+              <div className="mt-0.5 text-[11px] leading-tight text-muted-foreground sm:text-sm">
+                {label}
+              </div>
             </div>
           ))}
         </div>
