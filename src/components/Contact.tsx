@@ -1,137 +1,69 @@
-import { useState, type FormEvent } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Send, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { SiGithub, SiLeetcode } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
-import { z } from "zod";
-
-const contactSchema = z.object({
-  name: z.string().trim().min(1, "Name is required").max(100),
-  email: z.string().trim().email("Invalid email").max(255),
-  message: z.string().trim().min(1, "Message is required").max(1000),
-});
 
 const socials = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/muskan-khar-139465257", icon: FaLinkedin },
   { label: "GitHub", href: "https://github.com/3Muskankhar", icon: SiGithub },
   { label: "LeetCode", href: "https://leetcode.com/u/muskaan_khar/", icon: SiLeetcode },
-  { label: "Email", href: "mailto:muskankhar2004@gmail.com", icon: Mail },
 ];
 
 export function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
-
-  function onSubmit(e: FormEvent) {
-    e.preventDefault();
-    const parsed = contactSchema.safeParse(form);
-    if (!parsed.success) {
-      const fieldErrors: Record<string, string> = {};
-      for (const issue of parsed.error.issues) {
-        fieldErrors[issue.path[0] as string] = issue.message;
-      }
-      setErrors(fieldErrors);
-      return;
-    }
-    setErrors({});
-
-    const { name, email, message } = parsed.data;
-    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-    const body = encodeURIComponent(
-      `Hi Muskan,\n\n${message}\n\n— ${name}\n${email}`,
-    );
-    // Open the user's email client with the message pre-filled.
-    window.location.href = `mailto:muskankhar2004@gmail.com?subject=${subject}&body=${body}`;
-
-    setStatus("sent");
-    setForm({ name: "", email: "", message: "" });
-    setTimeout(() => setStatus("idle"), 4000);
-  }
-
   return (
     <section
       id="contact"
-      className="border-t border-border bg-background py-20 sm:py-28"
+      className="relative overflow-hidden border-t border-border bg-background py-20 sm:py-28"
     >
-      <div className="mx-auto max-w-2xl px-6">
-        <div className="mb-12 text-center">
-          <p className="text-xs font-medium tracking-widest text-primary uppercase">
-            Contact
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Let&apos;s build something
-          </h2>
-          <p className="mx-auto mt-4 max-w-lg text-base text-muted-foreground">
-            Have a project, role, or idea in mind? Send a note — I&apos;ll get
-            back to you soon.
-          </p>
+      {/* Subtle grid + glow background */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-32 left-1/2 -z-0 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-primary/15 blur-3xl"
+      />
+
+      <div className="relative mx-auto max-w-3xl px-6 text-center">
+        <p className="text-xs font-medium tracking-[0.25em] text-primary uppercase">
+          Contact
+        </p>
+        <h2 className="mt-4 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
+          Let&apos;s{" "}
+          <span className="font-script bg-gradient-to-br from-primary via-accent to-primary bg-clip-text text-transparent italic font-normal">
+            talk
+          </span>
+        </h2>
+        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          I&apos;m actively looking for full-time SDE opportunities starting
+          2026. Happy to chat about systems, AI, or a good engineering problem.
+        </p>
+
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a
+            href="mailto:muskankhar2004@gmail.com"
+            className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/40 transition-all hover:-translate-y-0.5 hover:shadow-primary/60 sm:w-auto"
+          >
+            <Mail className="h-4 w-4" />
+            muskankhar2004@gmail.com
+          </a>
+          <a
+            href="https://www.linkedin.com/in/muskan-khar-139465257"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="group inline-flex w-full items-center justify-center gap-3 rounded-full border border-border bg-card/50 px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary sm:w-auto"
+          >
+            <FaLinkedin className="h-4 w-4" />
+            Connect on LinkedIn
+          </a>
         </div>
 
-        <form
-          onSubmit={onSubmit}
-          noValidate
-          className="rounded-2xl border border-border bg-card/50 p-6 backdrop-blur sm:p-8"
-        >
-          <div className="grid gap-5">
-            <div className="grid gap-2">
-              <Label htmlFor="name">Name</Label>
-              <Input
-                id="name"
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                placeholder="Your name"
-                maxLength={100}
-              />
-              {errors.name && (
-                <p className="text-xs text-destructive">{errors.name}</p>
-              )}
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                placeholder="you@example.com"
-                maxLength={255}
-              />
-              {errors.email && (
-                <p className="text-xs text-destructive">{errors.email}</p>
-              )}
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="message">Message</Label>
-              <Textarea
-                id="message"
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                placeholder="Tell me about your project..."
-                rows={5}
-                maxLength={1000}
-              />
-              {errors.message && (
-                <p className="text-xs text-destructive">{errors.message}</p>
-              )}
-            </div>
-
-            <Button type="submit" size="lg" className="w-full sm:w-auto sm:self-end">
-              <Send className="mr-2 h-4 w-4" />
-              Send message
-            </Button>
-            {status === "sent" && (
-              <p className="text-center text-sm text-primary">
-                Opening your email app… send it through and I&apos;ll get back to you soon.
-              </p>
-            )}
-          </div>
-        </form>
-
-        <div className="mt-10 flex items-center justify-center gap-4">
+        <div className="mt-10 flex items-center justify-center gap-3">
           {socials.map(({ label, href, icon: Icon }) => (
             <a
               key={label}
@@ -139,9 +71,9 @@ export function Contact() {
               target="_blank"
               rel="noreferrer noopener"
               aria-label={label}
-              className="group inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card/50 text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-card/40 text-muted-foreground backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary"
             >
-              <Icon className="h-5 w-5" />
+              <Icon className="h-4 w-4" />
             </a>
           ))}
         </div>
