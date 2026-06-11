@@ -35,7 +35,7 @@ export function About() {
             </p>
             <h2 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
               About{" "}
-              <span className="font-script bg-gradient-to-br from-primary via-accent to-primary bg-clip-text text-transparent italic font-normal">
+              <span className="font-script inline-block bg-gradient-to-br from-primary via-accent to-primary bg-clip-text pr-3 text-transparent italic font-normal leading-[1.2]">
                 Me
               </span>
             </h2>
