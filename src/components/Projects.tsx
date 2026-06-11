@@ -138,8 +138,22 @@ export function Projects() {
           <p className="text-xs font-medium tracking-widest text-primary uppercase">
             My Work
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            {active === "Experience" ? "Experience" : "Selected Projects"}
+          <h2 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+            {active === "Experience" ? (
+              <>
+                My{" "}
+                <span className="font-script bg-gradient-to-br from-primary via-accent to-primary bg-clip-text text-transparent italic font-normal">
+                  Experience
+                </span>
+              </>
+            ) : (
+              <>
+                Selected{" "}
+                <span className="font-script bg-gradient-to-br from-primary via-accent to-primary bg-clip-text text-transparent italic font-normal">
+                  Projects
+                </span>
+              </>
+            )}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
             {active === "Experience"

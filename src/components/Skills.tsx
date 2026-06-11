@@ -96,8 +96,11 @@ export function Skills() {
           <p className="text-xs font-medium tracking-widest text-primary uppercase">
             Skills
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            My Skills
+          <h2 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+            My{" "}
+            <span className="font-script bg-gradient-to-br from-primary via-accent to-primary bg-clip-text text-transparent italic font-normal">
+              Skills
+            </span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground">
             Technologies, tools, and concepts I work with — hover any pill to
