@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { SiGithub, SiLeetcode } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
 
@@ -33,9 +33,9 @@ export function Contact() {
         <p className="text-xs font-medium tracking-[0.25em] text-primary uppercase">
           Contact
         </p>
-        <h2 className="mt-4 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
+        <h2 className="mt-4 pb-2 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
           Let&apos;s{" "}
-          <span className="font-script bg-gradient-to-br from-primary via-accent to-primary bg-clip-text text-transparent italic font-normal">
+          <span className="font-script inline-block bg-gradient-to-br from-primary via-accent to-primary bg-clip-text pr-3 text-transparent italic font-normal leading-[1.2]">
             talk
           </span>
         </h2>
@@ -60,6 +60,13 @@ export function Contact() {
           >
             <FaLinkedin className="h-4 w-4" />
             Connect on LinkedIn
+          </a>
+          <a
+            href="tel:+919541290879"
+            className="group inline-flex w-full items-center justify-center gap-3 rounded-full border border-border bg-card/50 px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary sm:w-auto"
+          >
+            <Phone className="h-4 w-4" />
+            +91 95412 90879
           </a>
         </div>
 

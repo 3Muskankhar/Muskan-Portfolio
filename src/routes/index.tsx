@@ -6,6 +6,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { About } from "@/components/About";
 import { Skills } from "@/components/Skills";
+import { Experience } from "@/components/Experience";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
 
@@ -108,6 +109,7 @@ function Index() {
     </section>
     <About />
     <Skills />
+    <Experience />
     <Projects />
     <Contact />
     </>
