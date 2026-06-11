@@ -33,7 +33,7 @@ export function Contact() {
         <p className="text-xs font-medium tracking-[0.25em] text-primary uppercase">
           Contact
         </p>
-        <h2 className="mt-4 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
+        <h2 className="mt-4 pb-2 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
           Let&apos;s{" "}
           <span className="font-script inline-block bg-gradient-to-br from-primary via-accent to-primary bg-clip-text pr-3 text-transparent italic font-normal leading-[1.2]">
             talk
