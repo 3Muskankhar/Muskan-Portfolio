@@ -53,15 +53,6 @@ export function Contact() {
             muskankhar2004@gmail.com
           </a>
           <a
-            href="https://www.linkedin.com/in/muskan-khar-139465257"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="group inline-flex w-full items-center justify-center gap-3 rounded-full border border-border bg-card/50 px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary sm:w-auto"
-          >
-            <FaLinkedin className="h-4 w-4" />
-            Connect on LinkedIn
-          </a>
-          <a
             href="tel:+919541290879"
             className="group inline-flex w-full items-center justify-center gap-3 rounded-full border border-border bg-card/50 px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary sm:w-auto"
           >

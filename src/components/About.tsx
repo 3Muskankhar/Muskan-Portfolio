@@ -1,10 +1,25 @@
-import { Code2, Briefcase, GraduationCap } from "lucide-react";
+import { Brain, Layers, Database } from "lucide-react";
 import muskanPhoto from "@/assets/muskan-new.jpeg.asset.json";
 
 const stats = [
-  { icon: Code2, value: "5+", label: "Projects Delivered" },
-  { icon: Briefcase, value: "2", label: "SDE Internships" },
-  { icon: GraduationCap, value: "9.05", label: "CGPA / 10" },
+  {
+    icon: Layers,
+    eyebrow: "JPMC CFG '24",
+    value: "Top 200 / 53K",
+    sub: "Selected among the top 200 applicants out of 53,000 in J.P. Morgan Code for Good.",
+  },
+  {
+    icon: Brain,
+    eyebrow: "JEE MAINS '22",
+    value: "AIR 9548",
+    sub: "All India Rank in JEE Mains among 1M+ candidates.",
+  },
+  {
+    icon: Database,
+    eyebrow: "HACKERRANK",
+    value: "SQL Certified",
+    sub: "Certified proficiency in SQL on HackerRank.",
+  },
 ];
 
 export function About() {
@@ -70,19 +85,26 @@ export function About() {
           </div>
         </div>
 
-        {/* Stats — compact, stays 3-up on mobile */}
-        <div className="mt-12 grid grid-cols-3 gap-2 sm:gap-4">
-          {stats.map(({ icon: Icon, value, label }) => (
+        {/* Achievements — icon-left, eyebrow + value style */}
+        <div className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
+          {stats.map(({ icon: Icon, eyebrow, value, sub }) => (
             <div
-              key={label}
-              className="group rounded-xl border border-border bg-card/50 p-3 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 sm:p-5"
+              key={eyebrow}
+              className="group flex items-start gap-3 rounded-2xl border border-border bg-card/50 p-4 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 sm:gap-4 sm:p-5"
             >
-              <Icon className="h-4 w-4 text-primary sm:h-5 sm:w-5" />
-              <div className="mt-2 text-lg font-bold tracking-tight sm:mt-3 sm:text-2xl md:text-3xl">
-                {value}
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30 sm:h-12 sm:w-12">
+                <Icon className="h-5 w-5" />
               </div>
-              <div className="mt-0.5 text-[11px] leading-tight text-muted-foreground sm:text-sm">
-                {label}
+              <div className="min-w-0">
+                <p className="text-[10px] font-semibold tracking-[0.18em] text-muted-foreground uppercase sm:text-[11px]">
+                  {eyebrow}
+                </p>
+                <div className="mt-1 text-base font-bold tracking-tight sm:text-lg">
+                  {value}
+                </div>
+                <p className="mt-1 text-[11px] leading-snug text-muted-foreground sm:text-xs">
+                  {sub}
+                </p>
               </div>
             </div>
           ))}
