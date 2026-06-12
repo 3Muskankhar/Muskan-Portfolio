@@ -1,4 +1,4 @@
-import { Brain, Layers, Database } from "lucide-react";
+import { Layers, GraduationCap, Briefcase } from "lucide-react";
 import muskanPhoto from "@/assets/muskan-new.jpeg.asset.json";
 
 const stats = [
@@ -9,16 +9,16 @@ const stats = [
     sub: "Selected among the top 200 applicants out of 53,000 in J.P. Morgan Code for Good.",
   },
   {
-    icon: Brain,
-    eyebrow: "JEE MAINS '22",
-    value: "AIR 9548",
-    sub: "All India Rank in JEE Mains among 1M+ candidates.",
+    icon: GraduationCap,
+    eyebrow: "B.TECH CSE",
+    value: "9.05 CGPA",
+    sub: "Punjab Engineering College — consistent academic performance across semesters.",
   },
   {
-    icon: Database,
-    eyebrow: "HACKERRANK",
-    value: "SQL Certified",
-    sub: "Certified proficiency in SQL on HackerRank.",
+    icon: Briefcase,
+    eyebrow: "INTERNSHIPS",
+    value: "2× SWE Intern",
+    sub: "Software engineering internships at Microsoft and CSIR-CSIO.",
   },
 ];
 
