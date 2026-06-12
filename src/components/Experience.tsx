@@ -1,10 +1,11 @@
-import { Briefcase } from "lucide-react";
+import { Briefcase, Award } from "lucide-react";
 
 type ExperienceItem = {
   company: string;
   role: string;
   period: string;
   highlights: string[];
+  certificateUrl?: string;
 };
 
 const experiences: ExperienceItem[] = [
@@ -17,6 +18,7 @@ const experiences: ExperienceItem[] = [
       "Developed ML infrastructure to streamline experimentation and deployment.",
       "Created local testing frameworks to validate pipelines end-to-end.",
     ],
+    certificateUrl: "https://www.linkedin.com/in/muskan-khar-139465257",
   },
   {
     company: "CSIR-CSIO",
@@ -27,6 +29,7 @@ const experiences: ExperienceItem[] = [
       "Developed a student registration portal end-to-end.",
       "Engineered a student management system with Next.js, Prisma & MySQL.",
     ],
+    certificateUrl: "https://www.linkedin.com/in/muskan-khar-139465257",
   },
 ];
 
@@ -87,7 +90,7 @@ export function Experience() {
                         <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-background/60">
                           <Briefcase className="h-4 w-4 text-primary" />
                         </div>
-                        <div>
+                        <div className="flex-1">
                           <h3 className="text-xl font-semibold tracking-tight">
                             {exp.role}
                           </h3>
@@ -95,6 +98,18 @@ export function Experience() {
                             {exp.company}
                           </p>
                         </div>
+                        {exp.certificateUrl && (
+                          <a
+                            href={exp.certificateUrl}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            aria-label={`${exp.company} certificate`}
+                            title="View certificate"
+                            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border/60 bg-background/40 text-muted-foreground transition hover:border-primary/50 hover:text-primary"
+                          >
+                            <Award className="h-4 w-4" />
+                          </a>
+                        )}
                       </div>
                       <ul className="mt-5 space-y-2">
                         {exp.highlights.map((h) => (
