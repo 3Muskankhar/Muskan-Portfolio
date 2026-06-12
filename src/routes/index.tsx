@@ -9,6 +9,7 @@ import { Skills } from "@/components/Skills";
 import { Experience } from "@/components/Experience";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
+import resumeAsset from "@/assets/resume.pdf.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -80,7 +81,7 @@ function Index() {
             variant="outline"
             className="group w-full rounded-full px-7 sm:w-auto"
           >
-            <a href="/cv.pdf" download>
+            <a href={resumeAsset.url} download="Muskan_Khar_Resume.pdf">
               <Download className="mr-2 h-4 w-4" />
               Download CV
             </a>
