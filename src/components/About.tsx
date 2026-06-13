@@ -1,5 +1,5 @@
 import { Layers, GraduationCap, Briefcase } from "lucide-react";
-import muskanPhoto from "@/assets/muskan-new.jpeg.asset.json";
+import muskanPhoto from "@/assets/portfolio.jpeg";
 
 const stats = [
   {
@@ -34,7 +34,7 @@ export function About() {
               <div className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-3xl border border-primary/40" />
               <div className="relative aspect-[3/4] w-72 overflow-hidden rounded-3xl border border-border bg-card shadow-2xl sm:w-80 md:w-96">
                 <img
-                  src={muskanPhoto.url}
+                  src={muskanPhoto}
                   alt="Muskan Khar portrait"
                   className="h-full w-full object-cover"
                   loading="lazy"

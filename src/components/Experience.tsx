@@ -5,6 +5,7 @@ type ExperienceItem = {
   role: string;
   period: string;
   highlights: string[];
+   tags: string[];
   certificateUrl?: string;
 };
 
@@ -13,23 +14,25 @@ const experiences: ExperienceItem[] = [
     company: "Microsoft",
     role: "SDE Intern",
     period: "May – July 2025",
+    tags: ["Transformers", "Internal tools", "Testing", "Python"],
     highlights: [
       "Built embedding generation pipelines for large-scale topic workflows.",
       "Developed ML infrastructure to streamline experimentation and deployment.",
       "Created local testing frameworks to validate pipelines end-to-end.",
     ],
-    certificateUrl: "https://www.linkedin.com/in/muskan-khar-139465257",
+    certificateUrl: "https://drive.google.com/file/d/1omlgiy42V27doccKhsRN7vQRacplcUqD/view?usp=sharing",
   },
   {
     company: "CSIR-CSIO",
     role: "SDE Intern",
     period: "Jan – May 2025",
+    tags: ["Next.js", "NextAuth", "Reactpdf", "MySQL", "Prisma"],
     highlights: [
       "Built the official website for the institute.",
       "Developed a student registration portal end-to-end.",
       "Engineered a student management system with Next.js, Prisma & MySQL.",
     ],
-    certificateUrl: "https://www.linkedin.com/in/muskan-khar-139465257",
+    certificateUrl: "https://istc.ac.in/",
   },
 ];
 
@@ -118,10 +121,23 @@ export function Experience() {
                             className="flex items-start gap-2 text-sm text-foreground/90"
                           >
                             <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                            
                             <span>{h}</span>
                           </li>
                         ))}
                       </ul>
+                      {exp.tags && exp.tags.length > 0 && (
+                        <div className="mt-6 flex flex-wrap gap-2 border-t border-border/40 pt-4">
+                          {exp.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="inline-flex items-center rounded-lg border border-border bg-background/50 px-2.5 py-1 text-xs font-medium text-foreground/80 transition-colors group-hover:border-primary/30"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </article>
 

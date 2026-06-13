@@ -19,7 +19,7 @@ export function Navbar() {
           href="/"
           className="text-lg font-semibold tracking-tight text-foreground"
         >
-          Portfolio
+         Muskan's Portfolio
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
