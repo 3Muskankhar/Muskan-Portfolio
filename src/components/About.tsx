@@ -11,7 +11,7 @@ const stats = [
   {
     icon: GraduationCap,
     eyebrow: "B.TECH CSE",
-    value: "9.05 CGPA",
+    value: "9.13 CGPA",
     sub: "Punjab Engineering College — consistent academic performance across semesters.",
   },
   {
